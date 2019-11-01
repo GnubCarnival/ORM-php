@@ -1,7 +1,7 @@
 <?php
 
 //IMPORT OF DynaMan, The Dynamic Class Manager
-include("../../ASSET/Models/DynaMan.php");
+include("DynaMan.php");
 
 //Tell DynaMan the database tables we want to work with in this page
 $DynaMan->AddModel('');
