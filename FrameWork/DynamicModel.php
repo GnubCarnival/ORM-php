@@ -1,13 +1,12 @@
 <?php
 
-$config = parse_ini_file("../db.ini");
-$servername = $config["servername"];
-$username = $config["username"];
-$password = $config["password"];
-$dbname = $config["dbname"];
-
-
 class DynamicModel {
+  
+    public $servername = "localhost";
+    public $username = "root";
+    public $password = "";
+    public $dbname = "ORMtest";
+
 
     public $nameOfTable;
     public $datam = array();
@@ -15,7 +14,7 @@ class DynamicModel {
 
     function __construct($nameofthetable){
         $this->nameOfTable = $nameofthetable;
-        $this->conex = new mysqli($servername,$username, $password,$dbname);
+        $this->conex = new mysqli($this->servername,$this->username, $this->password,$this->dbname);
     }
 
 
