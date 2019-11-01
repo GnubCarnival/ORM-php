@@ -1,5 +1,12 @@
 <?php
 
+$config = parse_ini_file("../db.ini");
+$servername = $config["servername"];
+$username = $config["username"];
+$password = $config["password"];
+$dbname = $config["dbname"];
+
+
 class DynamicModel {
 
     public $nameOfTable;
@@ -8,7 +15,7 @@ class DynamicModel {
 
     function __construct($nameofthetable){
         $this->nameOfTable = $nameofthetable;
-        $this->conex = new mysqli("", "", "","");
+        $this->conex = new mysqli($servername,$username, $password,$dbname);
     }
 
 
